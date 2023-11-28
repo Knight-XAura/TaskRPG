@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwugcfpfnirpo"]
+
+[ext_resource type="PackedScene" uid="uid://4vjtgr2ew5bi" path="res://tabs/world/world.tscn" id="1_w8jnb"]
+[ext_resource type="ButtonGroup" uid="uid://clcx2yc5fgav4" path="res://tabs/tabs_group.tres" id="2_6t6hm"]
+
+[node name="Main" type="Node"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HUD/VBoxContainer/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+audio_listener_enable_2d = true
+size = Vector2i(360, 581)
+render_target_update_mode = 4
+
+[node name="World" parent="HUD/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_w8jnb")]
+
+[node name="Menu" type="Control" parent="HUD/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuBG" type="ColorRect" parent="HUD/VBoxContainer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/VBoxContainer/Menu/MenuBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="World" type="Button" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("2_6t6hm")
+text = "World"
+flat = true
+
+[node name="WHSeparator" type="VSeparator" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Habit" type="Button" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("2_6t6hm")
+text = "Habit"
+flat = true
+
+[node name="HDSeparator" type="VSeparator" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Daily" type="Button" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("2_6t6hm")
+text = "Daily"
+flat = true
+
+[node name="DTSeparator" type="VSeparator" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="ToDo" type="Button" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("2_6t6hm")
+text = "ToDo"
+flat = true
+
+[node name="TSSeparator" type="VSeparator" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="HUD/VBoxContainer/Menu/MenuBG/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = ExtResource("2_6t6hm")
+text = "Settings"
+flat = true
