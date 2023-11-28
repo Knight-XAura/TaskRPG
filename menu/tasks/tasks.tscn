@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://v7rvr1evp7ya"]
-
-[ext_resource type="ButtonGroup" uid="uid://1aycl1lsjm7p" path="res://menu/tasks/tasks_group.tres" id="1_06nmg"]
+[gd_scene format=3 uid="uid://v7rvr1evp7ya"]
 
 [node name="Tasks" type="VBoxContainer"]
 anchors_preset = 15
@@ -8,11 +6,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 10.0
 
 [node name="Control" type="Control" parent="ScrollContainer"]
 layout_mode = 2
@@ -22,6 +21,7 @@ size_flags_vertical = 3
 [node name="TaskMenuContainer" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
 
 [node name="TaskMenu" type="HBoxContainer" parent="TaskMenuContainer"]
 layout_mode = 2
@@ -32,8 +32,6 @@ alignment = 1
 [node name="Habits" type="Button" parent="TaskMenuContainer/TaskMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-toggle_mode = true
-button_group = ExtResource("1_06nmg")
 text = "Habits"
 flat = true
 
@@ -44,8 +42,6 @@ layout_mode = 2
 [node name="Dailies" type="Button" parent="TaskMenuContainer/TaskMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-toggle_mode = true
-button_group = ExtResource("1_06nmg")
 text = "Dailies"
 flat = true
 
@@ -56,7 +52,5 @@ layout_mode = 2
 [node name="ToDos" type="Button" parent="TaskMenuContainer/TaskMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-toggle_mode = true
-button_group = ExtResource("1_06nmg")
 text = "ToDos"
 flat = true
