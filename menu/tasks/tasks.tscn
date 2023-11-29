@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://v7rvr1evp7ya"]
+[gd_scene load_steps=2 format=3 uid="uid://v7rvr1evp7ya"]
+
+[ext_resource type="Script" path="res://menu/tasks/tasks.gd" id="1_20l41"]
 
 [node name="Tasks" type="VBoxContainer"]
 anchors_preset = 15
@@ -8,14 +10,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_20l41")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ViewScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Control" type="Control" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TaskMenuContainer" type="PanelContainer" parent="."]
@@ -49,8 +47,12 @@ flat = true
 clip_contents = true
 layout_mode = 2
 
-[node name="ToDos" type="Button" parent="TaskMenuContainer/TaskMenu"]
+[node name="Todos" type="Button" parent="TaskMenuContainer/TaskMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "ToDos"
+text = "Todos"
 flat = true
+
+[connection signal="pressed" from="TaskMenuContainer/TaskMenu/Habits" to="." method="_on_task_bar_tab_pressed" binds= [0]]
+[connection signal="pressed" from="TaskMenuContainer/TaskMenu/Dailies" to="." method="_on_task_bar_tab_pressed" binds= [1]]
+[connection signal="pressed" from="TaskMenuContainer/TaskMenu/Todos" to="." method="_on_task_bar_tab_pressed" binds= [2]]

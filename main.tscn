@@ -96,6 +96,7 @@ size_flags_horizontal = 3
 text = "Settings"
 flat = true
 
-[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/World" to="HUD/Main" method="_on_menu_pressed" binds= [0]]
-[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Tasks" to="HUD/Main" method="_on_menu_pressed" binds= [1]]
-[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Stats" to="HUD/Main" method="_on_menu_pressed" binds= [2]]
+[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Tasks" to="HUD/Main" method="_on_navigation_bar_tab_pressed" binds= [1]]
+[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Stats" to="HUD/Main" method="_on_navigation_bar_tab_pressed" binds= [2]]
+[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Inventory" to="HUD/Main" method="_on_navigation_bar_tab_pressed" binds= [3]]
+[connection signal="pressed" from="HUD/Main/MenuContainer/Menu/Settings" to="HUD/Main" method="_on_navigation_bar_tab_pressed" binds= [4]]
