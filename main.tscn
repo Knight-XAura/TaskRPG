@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwugcfpfnirpo"]
 
-[ext_resource type="Script" path="res://Main.gd" id="1_8c7xw"]
+[ext_resource type="Script" path="res://main.gd" id="1_8c7xw"]
 [ext_resource type="PackedScene" uid="uid://4vjtgr2ew5bi" path="res://menu/world/world.tscn" id="1_w8jnb"]
 
 [node name="Main" type="Node"]
@@ -36,7 +36,7 @@ stretch = true
 disable_3d = true
 handle_input_locally = false
 audio_listener_enable_2d = true
-size = Vector2i(360, 581)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="World" parent="HUD/Main/View/SVPContainer/SubViewport" instance=ExtResource("1_w8jnb")]
