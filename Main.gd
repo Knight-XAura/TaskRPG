@@ -1,12 +1,15 @@
 extends VBoxContainer
-
+# Move scenes into folders and when app loads we should go through main_navigation_scenes
+#We should see what needs to be updated from the default or even setup this or that in the _init
+#This would require packing scenes to hapen from this node vs just is tasks which is slightly cleaner feeling
+# would need to rewrite some code of coruse for the navigation bar pressed function
+# this would also require editing of the pack function
 
 @onready var view: Control = $View as Control
 @onready var world: SubViewportContainer = $View/SVPContainer as SubViewportContainer
 @onready var current_tab: Control = world
 
 var current_tab_eid: MAIN_NAVIGATION_TABS = MAIN_NAVIGATION_TABS.WORLD
-# Need to fix this not able to use if statement to pull what set of data I want (making type Array fixes this, but isn't as strongly statically typed
 var main_navigation_scenes: Array[PackedScene] = [
 	null,
 	load("res://menu/tasks/tasks.tscn"),
@@ -25,8 +28,8 @@ enum MAIN_NAVIGATION_TABS {
 
 
 func _init() -> void:
-	if FileAccess.open("user://user_tasks.scn", FileAccess.READ) != null:
-		main_navigation_scenes[MAIN_NAVIGATION_TABS.TASKS] = load("res://menu/tasks/tasks.tscn")
+	if FileAccess.open("user://user_tasks/user_tasks.scn", FileAccess.READ) != null:
+		main_navigation_scenes[MAIN_NAVIGATION_TABS.TASKS] = load("user://user_tasks/user_tasks.scn")
 
 # Signals disappeared on me again
 func _on_main_navigation_bar_pressed(tab_to_show_eid: int) -> void:
@@ -39,11 +42,11 @@ func _on_main_navigation_bar_pressed(tab_to_show_eid: int) -> void:
 			view.add_child(tab_to_show, true)
 		current_tab = tab_to_show
 		current_tab_eid = tab_to_show_eid as MAIN_NAVIGATION_TABS
-		if current_tab_eid == MAIN_NAVIGATION_TABS.TASKS:
-			print(current_tab)
-			current_tab.user_tasks_updated.connect("_on_user_tasks_updated")
 		if current_tab_eid == MAIN_NAVIGATION_TABS.WORLD:
 			current_tab.show()
+		if current_tab_eid == MAIN_NAVIGATION_TABS.TASKS:
+			current_tab.pack_user_tasks_scene()
+			main_navigation_scenes[MAIN_NAVIGATION_TABS.TASKS] = load("user://user_tasks/user_tasks.scn")
 		tab_to_hide.hide()
 		if tab_to_hide != world:
 			tab_to_hide.queue_free()
@@ -51,8 +54,3 @@ func _on_main_navigation_bar_pressed(tab_to_show_eid: int) -> void:
 
 func _exit_tree() -> void:
 	pass # Save data to file
-
-
-func _on_user_tasks_updated() -> void:
-	main_navigation_scenes[MAIN_NAVIGATION_TABS.TASKS] = load("user://user_tasks.scn")
-	print("UPDATED")

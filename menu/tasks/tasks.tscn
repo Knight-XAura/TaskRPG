@@ -16,6 +16,49 @@ script = ExtResource("1_20l41")
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="ViewContainer" type="Control" parent="View"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Habits" type="VBoxContainer" parent="View/ViewContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="View/ViewContainer/Habits"]
+layout_mode = 2
+text = "HABITS"
+
+[node name="Dailies" type="VBoxContainer" parent="View/ViewContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="View/ViewContainer/Dailies"]
+layout_mode = 2
+text = "DAILIES"
+
+[node name="Todos" type="VBoxContainer" parent="View/ViewContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="View/ViewContainer/Todos"]
+layout_mode = 2
+text = "TODOS"
+
 [node name="NavigationContainer" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
