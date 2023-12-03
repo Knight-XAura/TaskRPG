@@ -16,3 +16,13 @@ shape = SubResource("RectangleShape2D_m8og8")
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_wxumv")
+
+[node name="Camera" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.8
+drag_top_margin = 0.9
+drag_right_margin = 0.8
+drag_bottom_margin = 0.9
+editor_draw_limits = true
+editor_draw_drag_margin = true

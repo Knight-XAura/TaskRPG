@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dww4nr767r142"]
 
 [node name="Stats" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -2,14 +2,14 @@ extends VBoxContainer
 
 
 @onready var task_view: ScrollContainer = $View as ScrollContainer
-@onready var task_views: Array[VBoxContainer] = [
+@onready var task_views: Array[VBoxContainer] = [ # May resort to emit signal upon child ready and adding themself to this list
 	$View/ViewContainer/Habits,
 	$View/ViewContainer/Dailies,
 	$View/ViewContainer/Todos
 ]
-@onready var current_tab: Control = task_views[TASK_NAVIGATION_TABS.HABITS] as Control
+@onready var current_tab: Control = task_views[TASK_NAVIGATION_TABS.HABITS] as Control # Again signals for visible tab to claim
 # To load the previous instances screen that was showing I may need to find a way to make these both dynamic at load time
-var current_tab_eid: TASK_NAVIGATION_TABS = TASK_NAVIGATION_TABS.HABITS
+var current_tab_eid: TASK_NAVIGATION_TABS = TASK_NAVIGATION_TABS.HABITS # Same as above
 
 const TASK_SCENES: Array[PackedScene] = [
 	preload("res://menu/tasks/habit/habit.tscn"),

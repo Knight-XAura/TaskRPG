@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwugcfpfnirpo"]
+[gd_scene load_steps=2 format=3 uid="uid://bwugcfpfnirpo"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_jntop"]
-[ext_resource type="PackedScene" uid="uid://4vjtgr2ew5bi" path="res://menu/world/world.tscn" id="2_21kps"]
 
 [node name="Game" type="VBoxContainer"]
 anchors_preset = 15
@@ -34,8 +33,6 @@ handle_input_locally = false
 audio_listener_enable_2d = true
 size = Vector2i(360, 581)
 render_target_update_mode = 4
-
-[node name="World" parent="View/SVPContainer/SubViewport" instance=ExtResource("2_21kps")]
 
 [node name="NavigationContainer" type="PanelContainer" parent="."]
 layout_mode = 2

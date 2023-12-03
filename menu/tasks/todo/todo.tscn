@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://bvt3bru7numif"]
+[gd_scene format=3 uid="uid://hgukpo3v2sra"]
 
-[node name="Todo" type="Control"]
-layout_mode = 3
+[node name="Todos" type="VBoxContainer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "TODOS"
