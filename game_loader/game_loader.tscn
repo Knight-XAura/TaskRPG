@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj71ky7khix88"]
 
-[ext_resource type="Script" path="res://loading_screen/loading_screen.gd" id="1_b736u"]
+[ext_resource type="Script" path="res://game_loader/game_loader.gd" id="1_b736u"]
 
-[node name="LoadingScreen" type="Control"]
+[node name="game_loader" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
