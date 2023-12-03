@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cpxl1kgl16pit"]
+[gd_scene load_steps=2 format=3 uid="uid://cpxl1kgl16pit"]
+
+[ext_resource type="Script" path="res://menu/quests/quests.gd" id="1_5et07"]
 
 [node name="Quests" type="Control"]
 visible = false
@@ -10,3 +12,4 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_5et07")

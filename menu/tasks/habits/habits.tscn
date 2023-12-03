@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://di800gr36rh48"]
+[gd_scene load_steps=2 format=3 uid="uid://di800gr36rh48"]
+
+[ext_resource type="Script" path="res://menu/tasks/habits/habits.gd" id="1_oqp8p"]
 
 [node name="Habits" type="VBoxContainer"]
 anchors_preset = 15
@@ -6,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oqp8p")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

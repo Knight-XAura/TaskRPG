@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://hgukpo3v2sra"]
+[gd_scene load_steps=2 format=3 uid="uid://hgukpo3v2sra"]
+
+[ext_resource type="Script" path="res://menu/tasks/todos/todos.gd" id="1_nqokc"]
 
 [node name="Todos" type="VBoxContainer"]
 visible = false
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nqokc")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 2

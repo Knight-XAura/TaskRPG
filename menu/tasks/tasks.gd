@@ -12,9 +12,9 @@ extends VBoxContainer
 var current_tab_eid: TASK_NAVIGATION_TABS = TASK_NAVIGATION_TABS.HABITS # Same as above
 
 const TASK_SCENES: Array[PackedScene] = [
-	preload("res://menu/tasks/habit/habit.tscn"),
-	preload("res://menu/tasks/daily/daily.tscn"),
-	preload("res://menu/tasks/todo/todo.tscn")
+	preload("res://menu/tasks/habits/habits.tscn"),
+	preload("res://menu/tasks/dailies/dailies.tscn"),
+	preload("res://menu/tasks/todos/todos.tscn")
 ]
 
 enum TASK_NAVIGATION_TABS {
@@ -22,10 +22,6 @@ enum TASK_NAVIGATION_TABS {
 	DAILIES = 1,
 	TODOS = 2
 }
-
-
-func _init() -> void:
-	pass
 
 
 func _ready() -> void:
@@ -44,10 +40,6 @@ func _on_task_navigation_bar_pressed(tab_to_show_eid: int) -> void:
 
 
 func _exit_tree() -> void:
-	pass
-	
-# Want to find a way to determine if scene actually changes in any way, because if not why are we running this?
-func pack_user_tasks_scene() -> void:
 	get_children_recursively(self)
 	var user_tasks_packed_scene: PackedScene = PackedScene.new()
 	user_tasks_packed_scene.pack(self)
