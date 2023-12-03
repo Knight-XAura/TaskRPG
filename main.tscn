@@ -6,4 +6,3 @@
 script = ExtResource("1_8c7xw")
 
 [node name="HUD" type="CanvasLayer" parent="."]
-visible = false

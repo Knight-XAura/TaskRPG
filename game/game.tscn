@@ -100,6 +100,7 @@ size_flags_horizontal = 3
 text = "Settings"
 flat = true
 
+[connection signal="child_entered_tree" from="View" to="." method="_on_view_child_entered_tree"]
 [connection signal="pressed" from="NavigationContainer/Navigation/World" to="." method="_on_main_navigation_bar_pressed" binds= [0]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Tasks" to="." method="_on_main_navigation_bar_pressed" binds= [1]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Stats" to="." method="_on_main_navigation_bar_pressed" binds= [2]]
