@@ -13,11 +13,11 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_jntop")
 
-[node name="View" type="Control" parent="."]
+[node name="ViewContainer" type="Control" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SVPContainer" type="SubViewportContainer" parent="View"]
+[node name="SVPContainer" type="SubViewportContainer" parent="ViewContainer"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +27,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="View/SVPContainer"]
+[node name="SubViewport" type="SubViewport" parent="ViewContainer/SVPContainer"]
 disable_3d = true
 handle_input_locally = false
 audio_listener_enable_2d = true
@@ -100,7 +100,7 @@ size_flags_horizontal = 3
 text = "Settings"
 flat = true
 
-[connection signal="child_entered_tree" from="View" to="." method="_on_view_child_entered_tree"]
+[connection signal="child_entered_tree" from="ViewContainer" to="." method="_on_view_child_entered_tree"]
 [connection signal="pressed" from="NavigationContainer/Navigation/World" to="." method="_on_main_navigation_bar_pressed" binds= [0]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Tasks" to="." method="_on_main_navigation_bar_pressed" binds= [1]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Stats" to="." method="_on_main_navigation_bar_pressed" binds= [2]]

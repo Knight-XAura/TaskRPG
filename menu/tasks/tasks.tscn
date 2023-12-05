@@ -13,11 +13,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_20l41")
 
-[node name="View" type="ScrollContainer" parent="."]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ViewContainer" type="Control" parent="View"]
+[node name="ViewContainer" type="Control" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -59,7 +55,7 @@ size_flags_horizontal = 3
 text = "Todos"
 flat = true
 
-[connection signal="child_entered_tree" from="View/ViewContainer" to="." method="_on_view_container_child_entered_tree"]
+[connection signal="child_entered_tree" from="ViewContainer" to="." method="_on_view_container_child_entered_tree"]
 [connection signal="pressed" from="NavigationContainer/Navigation/Habits" to="." method="_on_task_navigation_bar_pressed" binds= [0]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Dailies" to="." method="_on_task_navigation_bar_pressed" binds= [1]]
 [connection signal="pressed" from="NavigationContainer/Navigation/Todos" to="." method="_on_task_navigation_bar_pressed" binds= [2]]

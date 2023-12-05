@@ -1,9 +1,7 @@
 extends VBoxContainer
-# would need to rewrite some code of coruse for the navigation bar pressed function
-# this would also require editing of the pack function
 
-@onready var view: Control = $View as Control
-@onready var world: SubViewportContainer = $View/SVPContainer as SubViewportContainer
+
+@onready var world: SubViewportContainer = $ViewContainer/SVPContainer as SubViewportContainer
 @onready var current_tab: Control = world
 
 var current_tab_eid: MAIN_NAVIGATION_TABS = MAIN_NAVIGATION_TABS.WORLD

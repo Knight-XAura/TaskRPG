@@ -1,11 +1,9 @@
 extends VBoxContainer
 
 
-@onready var task_view: ScrollContainer = $View as ScrollContainer
-
 var current_tab: Control
 var current_tab_eid: TASK_NAVIGATION_TABS = TASK_NAVIGATION_TABS.HABITS
-var task_views: Array[VBoxContainer] = []
+var task_navigation_views: Array[VBoxContainer] = []
 
 enum TASK_NAVIGATION_TABS {
 	HABITS = 0,
@@ -22,7 +20,7 @@ func _ready() -> void:
 func _on_task_navigation_bar_pressed(tab_to_show_eid: int) -> void:
 	if current_tab_eid != tab_to_show_eid:
 		var tab_to_hide: Control = current_tab
-		var tab_to_show: VBoxContainer = task_views[tab_to_show_eid]
+		var tab_to_show: VBoxContainer = task_navigation_views[tab_to_show_eid]
 		tab_to_show.show()
 		current_tab = tab_to_show
 		current_tab_eid = tab_to_show_eid as TASK_NAVIGATION_TABS
@@ -30,6 +28,6 @@ func _on_task_navigation_bar_pressed(tab_to_show_eid: int) -> void:
 
 
 func _on_view_container_child_entered_tree(child_task: VBoxContainer) -> void:
-	if task_views.is_empty():
+	if task_navigation_views.is_empty():
 		current_tab = child_task
-	task_views.append(child_task)
+	task_navigation_views.append(child_task)
